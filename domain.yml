@@ -1,0 +1,60 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- main_menu:
+    use_entities: true
+entities: []
+slots: {}
+responses:
+  utter_greet:
+  - buttons:
+    - payload: /main_menu
+      title: Let's see
+    text: Hello Guest! Welcome to Nepal Adventure, where your comfort, personal safety and total satisfaction is the highest priority i'wiil help you to make your Nepal vacation to be perfect ⭐⭐⭐⭐⭐ right after you click the button below.
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_main_menu:
+  - buttons:
+    - payload: /plan_my_trip
+      title: Plan My Trip
+    - payload: /activities_offered
+      title: Activities Offered
+    - payload: /contact_us
+      title: Contact Us
+    - payload: /testimonals
+      title: Testimonals
+    - payload: /about_nepal
+      title: About Nepal
+    - payload: /tips_and_tricks
+      title: Tips and Tricks
+    text: Ready to make your Nepal trip planning easy, make it worry-free and seamless?
+actions: []
+forms: {}
+e2e_actions: []
